@@ -69,5 +69,14 @@ setInterval(() => {
   }
 }, 15000);
 
+const express = require("express");
+const app = express();
+const port = 4000;
+app.get('/', (req, res) => {
+  const imagePath = path.join(__dirname, 'index.html');
+  res.sendFile(imagePath);
+});
+app.listen(port, () => console.log('\x1b[36m%s\x1b[0m', `|    🔗 Cherry đang mở cổng : ${port}`));
+
 module.exports = client;
 printWatermark();
