@@ -1,6 +1,9 @@
 const { Client, GatewayIntentBits, ActivityType } = require('discord.js');
 const fs = require('fs');
 const { printWatermark } = require('./functions/handlers');
+const figlet = require('figlet');
+const express = require('express');
+const path = require('path');
 
 const client = new Client({
   intents: Object.keys(GatewayIntentBits).map((a) => {
